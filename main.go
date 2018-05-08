@@ -31,6 +31,9 @@ func main() {
 	fmt.Println("\nEnd")
 }
 
+// Copyright 2009 The Go Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license
+
 type Cipher struct {
 	s [256]uint32
 	i, j uint8
