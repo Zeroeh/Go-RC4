@@ -21,7 +21,7 @@ func main() {
 	buf := make([]byte, len(RandomPacket))
 	fmt.Println("\nEncrypted:", RandomPacket)
 	key.XorKeyStreamGeneric(buf, RandomPacket)
-	key.Reset() //reset since we cant rewind the rc4 state for encrypting
+	key.Reset() //reset since we cant rewind the rc4 state for working on the same dataset
 	key2, _ := NewCipher([]byte(RC4OutgoingKey))
 	fmt.Println("\nDecrypted:", buf)
 	key2.XorKeyStreamGeneric(RandomPacket, buf)
