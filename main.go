@@ -31,6 +31,12 @@ func main() {
 	fmt.Println("\nEnd")
 }
 
+func CipherData(data []byte, ciph *Cipher) []byte {
+	buffer := make([]byte, len(data))
+	ciph.XorKeyStreamGeneric(buffer, data)
+	return buffer
+}
+
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license
 
